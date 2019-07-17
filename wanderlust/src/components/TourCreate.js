@@ -163,19 +163,19 @@ class TourCreate extends React.Component{
                     type = 'number'
                    onChange = {this.handleInputChange}
                    placeholder = 'duration'
-                   value = {this.state.max_duration}
+                   value = {this.state.tour.max_duration}
                    name='max_duration'
                    />
                     <input
                    onChange = {this.handleInputChange}
                    placeholder = 'location'
-                   vale = {this.state.location}
+                   value = {this.state.tour.location}
                    name='location'
                    />
                     <input
                    onChange = {this.handleInputChange}
                    placeholder = 'tour type'
-                   vale = {this.state.type}
+                   value = {this.state.tour.type}
                    name='type'
                    />
                     
