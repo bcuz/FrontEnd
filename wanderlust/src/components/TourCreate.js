@@ -8,11 +8,11 @@ import axiosAuth from '../reducers/axiosAuth'
 class TourCreate extends React.Component{
     constructor(props){
         super(props)
-        this.state ={tours:[  {
+        this.state ={tour:  {
              max_duration:'',
             location:'',
           type:'',
-          }]};
+          }};
     }
       
 
@@ -37,7 +37,7 @@ class TourCreate extends React.Component{
 
     addTour = e => {
         e.preventDefault();
-       const tour = this.state
+       const tour = this.state.tour
 
          this.addNew(tour)
         this.setState( {  
@@ -50,7 +50,12 @@ class TourCreate extends React.Component{
            
     }
     handleInputChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
+        this.setState({
+            tour: {
+              ...this.state.tour,
+              [e.target.name]: e.target.type === 'number' ? parseInt(e.target.value) : e.target.value
+            }
+          });
       };
 
 
@@ -109,9 +114,9 @@ class TourCreate extends React.Component{
 
                                 <div className ='data'>
 
-                                <h3>{this.state.max_duration}</h3>
-                                <h3>{this.state.location}</h3>
-                                <h3>{this.state.type}</h3>
+                                <h3>{this.state.tour.max_duration}</h3>
+                                <h3>{this.state.tour.location}</h3>
+                                <h3>{this.state.tour.type}</h3>
 
                                 
 
@@ -155,10 +160,11 @@ class TourCreate extends React.Component{
               
                   
                     <input
+                    type = 'number'
                    onChange = {this.handleInputChange}
                    placeholder = 'duration'
                    value = {this.state.max_duration}
-                   name='duration'
+                   name='max_duration'
                    />
                     <input
                    onChange = {this.handleInputChange}
@@ -170,7 +176,7 @@ class TourCreate extends React.Component{
                    onChange = {this.handleInputChange}
                    placeholder = 'tour type'
                    vale = {this.state.type}
-                   name='tourType'
+                   name='type'
                    />
                     
                    <button type ='submit'>Add a Tour!</button>
