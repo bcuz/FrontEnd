@@ -1,40 +1,47 @@
 import React from 'react'
 // import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
+import axios from 'axios'
 
 class Login extends React.Component {
 
     constructor(props){
         super(props);
-        this.state =   {credentials:{
+        this.state =   { 
             username: '',
             password: ' '}
-        };
+     
     }
  
   changeHandle = e => {
       this.setState({
-        credentials: {
+        
         [e.target.name]: e.target.value }
         
-})
+)
 
   };
- 
-  LoginSubmit = e => {
-    const password = this.state.password;
-    const user = this.state.username;
-    localStorage.setItem (' ',user);
-    console.log(password)
-    console.log(user)
-    if (password === "Dracarys"){
-      console.log('CORRECT')
-    }else {
-      console.log("Wrong password , DORK")
+   
+  LoginSubmit = user =>{  
+    axios
+    .post('https://wanderlust-api.herokuapp.com/auth/login', user)
+    .then( res => {  localStorage.setItem('token',res.data.token)
+
     }
-  }
 
 
+    )
+    .catch (err =>{
+        console.log(err)
+    
+
+    })
+
+     console.log(user) }
+
+
+    //  https://wanderlust-api.herokuapp.com/auth/guide/register
+    //  https://wanderlust-api.herokuapp.com/auth/user/register
+    //  https://wanderlust-api.herokuapp.com/auth/login/
 
 
 

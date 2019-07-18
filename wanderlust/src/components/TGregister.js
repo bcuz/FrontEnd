@@ -15,6 +15,7 @@ class TGregister extends React.Component{
     axios
     .post('https://wanderlust-api.herokuapp.com/auth/guide/register', user)
     .then( res => {  localStorage.setItem('token',res.data.token)
+    console.log("HAY", user)
 
     }
 
@@ -28,12 +29,7 @@ class TGregister extends React.Component{
     changeHandle =e =>  this.setState({ [e.target.name]: e.target.value });
 
 
-    // regSubmit = e => {
-    //     const firstName = this.state.firstName;
-    //     const password = this.state.password;
-    //     const email = this.state.email;
-    //     console.log(password)
-    // }
+    
 
     render(){
 

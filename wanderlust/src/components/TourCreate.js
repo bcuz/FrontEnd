@@ -25,9 +25,9 @@ class TourCreate extends React.Component{
         .post('https://wanderlust-api.herokuapp.com/api/tours', newTour)
             .then(res => {
               const tour = res.data
-              this.setState({ tour })
+              this.setState({ ...this.state.tours , tour })
               console.log("!!!!",tour)
-              console.log('VVV',newTour)
+              console.log(' NEW:',newTour)
 
             })
             .catch(err => console.error(err))
