@@ -22,8 +22,10 @@ class Login extends React.Component {
   };
    
   LoginSubmit = user =>{  
+    console.log(user);
+    
     axios
-    .post('https://wanderlust-api.herokuapp.com/auth/login', user)
+    .post('https://wanderlust-api.herokuapp.com/auth/login', this.state)
     .then( res => {  localStorage.setItem('token',res.data.token)
 
     }
