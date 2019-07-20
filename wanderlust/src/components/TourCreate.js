@@ -34,13 +34,14 @@ class TourCreate extends React.Component{
          }
            
          
-        updateTour = e => {
+        update = e => {
             axiosAuth()
              
              .put(`https://wanderlust-api.herokuapp.com/api/tours/${e.id}`, e)
              
              
             .then(res => {
+                console.log('==>>>',e.id)
             let tour = {
                 location: '',
                 max_duration: '',
@@ -82,6 +83,23 @@ class TourCreate extends React.Component{
         console.log('NEW!!', tour)
            
     }
+
+    updateTour = e => {
+        e.preventDefault();
+         const tour = this.state
+        this.update(tour)
+             this.setState( {  
+                max_duration:'',
+               location:'',
+               type:'',
+               
+
+        })
+        console.log('==>',tour.id)
+    }
+
+
+
     handleInputChange = e => {
         this.setState({ [e.target.name]: e.target.value });
       };
@@ -89,7 +107,9 @@ class TourCreate extends React.Component{
       handleDelete = e => {
           this.setState({[e.target.name]: e.target.value})
       }
-
+       handleUpdate = e =>{
+        this.setState({[e.target.name]: e.target.value})
+    }
 
   //     componentDidMount(){
 	// 	axios.get('https://wanderlust-api.herokuapp.com/api/tours')
@@ -149,7 +169,7 @@ class TourCreate extends React.Component{
                                 <h3>{this.state.max_duration}</h3>
                                 <h3>{this.state.location}</h3>
                                 <h3>{this.state.type}</h3>
-
+                                <h3 onClick ={console.log()}>{this.state.id}</h3>
                                 
 
                                 </div>
@@ -218,8 +238,50 @@ class TourCreate extends React.Component{
                    placeholder = 'id'/>
                      
                    <button type ='submit'>Add a Tour!</button>
-                   <button onClick= {this.deleteTour}>Delete</button>
+ 
 
+
+
+
+
+
+
+
+
+              </form>
+
+            
+              <form onSubmit ={this.updateTour}>
+              
+                  
+                    <input
+                   onChange = {this.handleUpdate}
+                   placeholder = 'duration'
+                   type ='number'
+                   value = {this.state.max_duration}
+                   name='max_duration'
+                   />
+                    <input
+                   onChange = {this.handleUpdate}
+                   placeholder = 'location'
+                   value = {this.state.location}
+                   name='location'
+                   />
+                    <input
+                   onChange = {this.handleUpdate}
+                   placeholder = 'tour type'
+                   value = {this.state.type}
+                   name='type'
+                   />
+                   <input
+                   type = 'number'
+                   onChange = {this.updateTour}
+                   value ={this.state.id}
+                   name = 'id'
+                   placeholder = 'id'/>
+                     
+                   <button type ='submit'>Update!</button>
+ 
 
 
 

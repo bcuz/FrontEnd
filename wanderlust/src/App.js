@@ -37,7 +37,7 @@ function App() {
       <Route path = '/Tour-guide-register' component = {TGregister}/>
       <Route path = '/create-tour' component = {TourCreate} />
       <Route path = '/tour' component = {TourContainer} />
-      <Route path = '/update-tour' component = {UpdateTour} />
+      <Route path = '/update/:id' component = {UpdateTour} />
 
 
 
@@ -58,7 +58,7 @@ function App() {
            <NavLink to ='/Tour-guide-register'>Register as a Tour Guide</NavLink>
            <NavLink to ='/create-tour'>Create A TOUR!!</NavLink>
            <NavLink to ='/tour'>See Tours</NavLink>
-           <NavLink to ='/update-tour'>Update</NavLink>
+           <NavLink to ='/update/:id'>Update</NavLink>
 
 
 

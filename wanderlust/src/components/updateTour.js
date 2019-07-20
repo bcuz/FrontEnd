@@ -7,9 +7,7 @@ class UpdateTour extends React.Component{
     constructor(props){
         super(props)
         this.state =  {
-             max_duration:'',
-            location:'',
-          type:'',
+            tours:[]
           };
     }
 
@@ -19,31 +17,86 @@ class UpdateTour extends React.Component{
       };
 
 
-    updateTour = e => {
-        e.preventDefault()
-        axiosAuth()
+    update = e => {
+           const id = this.props.match.params.id;
+        
+         axiosAuth()
          
-         .put(`https://wanderlust-api.herokuapp.com/api/tours/${e.id}`, e)
+         
+         .put(`https://wanderlust-api.herokuapp.com/api/tours/${e.id}`,{ location: this.state.location,max_duration: this.state.max_duration, type:this.state.type})
          
          
         .then(res => {
             console.log(res.data)
-        let tour = {
-            location: '',
-            max_duration: '',
-            type:''
-        }
+            //  this.props.updateTour(res.data)
+            // this.props.history.push('/')
+        
 
         })
         .catch (err => console.log(err))
         
     }
 
+    updateTour = e => {
+        e.preventDefault();
+         const tour = this.state
+        this.update(tour)
+             this.setState( {  
+                max_duration:'',
+               location:'',
+               type:'',
+               id:''
+
+        })
+        console.log('==>',tour.id,tour.location)
+        console.log('STATE', this.state)
+
+    }
+
+  
+      componentDidMount(){
+		axios.get('https://wanderlust-api.herokuapp.com/api/tours')
+		.then(res=> {
+		  let tours = res.data
+		  this.setState(()=> ({tours: res.data}))
+	
+		  console.log("TOURS:", tours)
+	
+		})
+		.then(res => {
+		  console.log("NEWSTATE!!",this.state)
+		 })
+		.catch(err => {
+		  console.log('Server Error', err)
+		})
+		
+ 	}
+
 
     render(){
 
         return(
         <div>
+
+            <div>
+                      <ul>
+                     {this.state.tours.map (e => {
+                         return (
+                             <div className ='Stuff'>
+                 
+                                 <h2> {e.location}</h2>
+                                 <h2>{e.type}</h2>
+                                 <h2>{e.max_duration}</h2>
+                                 <button onClick= {console.log('HEY',e.location,e.max_duration,e.type)}>{e.id}</button>
+
+                             </div>
+                 
+                         )
+                     })}
+                 
+                 </ul>
+              
+            </div>
 
              <form>
 
@@ -65,6 +118,13 @@ class UpdateTour extends React.Component{
                    placeholder = 'tour type'
                    value = {this.state.type}
                    name='type'
+                   />
+                    <input
+                   onChange = {this.handleInputChange}
+                   placeholder = 'id'
+                   type ='number'
+                   value = {this.state.id}
+                   name='id'
                    />
 
              <button type = 'submit' onClick ={this.updateTour}>SUBMIT</button>
