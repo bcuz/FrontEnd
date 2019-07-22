@@ -1,7 +1,3 @@
- // import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-
-
 import React from 'react';
 import PostContainer from './TourContainer';
 import dummyData from '../dummyData';

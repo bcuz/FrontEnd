@@ -14,6 +14,7 @@ import TGregister from './components/TGregister'
 import TourCreate from './components/TourCreate'
 import TourContainer from './components/TourContainer'
 import UpdateTour from './components/updateTour'
+import Upload from './components/Upload'
 
 
 function App() {
@@ -38,6 +39,8 @@ function App() {
       <Route path = '/create-tour' component = {TourCreate} />
       <Route path = '/tour' component = {TourContainer} />
       <Route path = '/update/:id' component = {UpdateTour} />
+      <Route path = '/updloadPhoto/:id' component = {Upload} />
+
 
 
 
@@ -59,6 +62,8 @@ function App() {
            <NavLink to ='/create-tour'>Create A TOUR!!</NavLink>
            <NavLink to ='/tour'>See Tours</NavLink>
            <NavLink to ='/update/:id'>Update</NavLink>
+           <NavLink to ='/uploadPhoto/:id'>Upload Photo</NavLink>
+
 
 
 

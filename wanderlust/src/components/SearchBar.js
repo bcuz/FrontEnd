@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
- import dummyData from '../dummyData'
+//  import dummyData from '../dummyData'
  import Place from './Place';
  import axios from 'axios';
 

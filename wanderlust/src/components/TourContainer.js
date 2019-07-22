@@ -56,11 +56,11 @@ class TourContainer extends React.Component {
 						<div>
 
 							<h1>{e.location}</h1>
-							<h1>{e.max_duration}</h1>
+							<h1>{e.max_duration} days</h1>
 							<h1>{e.type}</h1>
 							<button onClick ={()=>this.props.deleteTour(e.id) }>{e.id}</button>
 							<NavLink to ={`/update/${e.id}`}>Update {e.id}</NavLink>
-
+                              <NavLink to ={`/uploadPhoto/${e.id}`}>Upload-Photo</NavLink>
  						</div>
 
 					)

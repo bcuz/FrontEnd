@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import axiosAuth from '../reducers/axiosAuth'
+import Upload from './Upload'
 
 
 class UpdateTour extends React.Component{
@@ -86,8 +87,9 @@ class UpdateTour extends React.Component{
                  
                                  <h2> {e.location}</h2>
                                  <h2>{e.type}</h2>
-                                 <h2>{e.max_duration}</h2>
-                                 <button onClick= {console.log('HEY',e.location,e.max_duration,e.type)}>{e.id}</button>
+                                 <h2>{e.max_duration} years</h2>
+                                 <button   >{e.id}</button>
+                                 <h2>{e.id}</h2>
 
                              </div>
                  
@@ -135,6 +137,7 @@ class UpdateTour extends React.Component{
 
 
              </form>
+             <Upload/>
 
         </div>
         );

@@ -6,7 +6,14 @@
     flex-direction: row;
 }
 .Stuff {
-    border: 2px solid yellow;
+    border: 2px solid white;
+    color: white;
+    border-radius:8px;
+    margin:8px;
+}
+.Stuff button {
+    margin: 5px;
+
 }
 form{
     border: 2px solid blue;
@@ -27,8 +34,7 @@ form input {
 
  .info {
     width:75%;
-    border:3px solid red;
-    display:inline-flex;
+     display:inline-flex;
     flex-direction:column;
     justify-content: left;
 
@@ -41,17 +47,19 @@ form input {
 
   .picDiv{
        border: 2px solid blue;
-       width: 30%;
+       width: 22%;
         margin: 10px;
-        height: 80%;
+        height: 90%;
       background-color: aqua;
       border:  4px solid white;
     border-radius: 7px;
+    display:flex;
   }
   .placeHolder{
       width:15%;
-      border: 2px solid black;
+      border: 2px solid white;
       margin: 10px;
+      color: white;
 
   }
   .threeDiv h3{
@@ -62,7 +70,8 @@ form input {
 
   .data{
       width:50%;
-      border: 2px solid palegreen;
+      border: 2px solid white;
+      border-radius: 8px;
       margin: 10px;
 
   }
