@@ -147,10 +147,10 @@
                          
                               <div className ='info'>
         
-                                 <div className ='header'>
+                                 {/* <div className ='header'>
                                  <h1> {this.state.tourName}
         </h1>  
-                                 </div>
+                                 </div> */}
         
                                  <div className = 'threeDiv'>
                                      <div className ='picDiv'>
