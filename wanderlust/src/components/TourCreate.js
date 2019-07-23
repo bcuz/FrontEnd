@@ -240,12 +240,12 @@
                            value = {this.state.tour.type}
                            name='type'
                            />
-                           {/* <input
+                            <input
                            type = 'number'
                            onChange = {this.handleDelete}
                            value ={this.state.id}
                            name = 'id'
-                           placeholder = 'id'/> */}
+                           placeholder = 'id'/> 
                              
                            <button type ='submit'>Add a Tour!</button>
                            {/* <button onClick= {this.deleteTour}>Delete</button> */}
