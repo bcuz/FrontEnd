@@ -1,7 +1,7 @@
 # FrontEnd
 [build]
-base = "client/"
-publish = "client/build/"
+base = "wanderlust/"
+publish = "wanderlust/build/"
 command = "yarn build"
 [[redirects]]
 from = "/*"
