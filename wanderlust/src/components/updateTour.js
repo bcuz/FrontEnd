@@ -137,7 +137,7 @@ class UpdateTour extends React.Component{
 
 
              </form>
-             <Upload/>
+             {/* <Upload/> */}
 
         </div>
         );
