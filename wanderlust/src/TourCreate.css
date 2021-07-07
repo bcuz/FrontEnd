@@ -1,0 +1,102 @@
+.tourForm{
+     background-color: navy;
+      height:80%;
+     width:100%;
+    display:inline-flex;
+    flex-direction: row;
+}
+.Stuff {
+    border: 2px solid white;
+    color: white;
+    border-radius:8px;
+    margin:8px;
+    background-color: blue
+}
+.Stuff button {
+    margin: 5px;
+
+}
+form{
+    border: 2px solid blue;
+    height:200%;
+    display:inline-flex;
+    flex-direction: column;
+
+}
+form input {
+    padding: 15px;
+    margin: 10px;
+}
+
+.description{
+    padding:30px;
+}
+ 
+
+ .info {
+    width:75%;
+     display:inline-flex;
+    flex-direction:column;
+    justify-content: left;
+
+ }
+  .header{
+      width: 100%;
+      border: 2px solid black;
+      height: 15%;
+  }
+
+  .picDiv{
+       border: 2px solid blue;
+       width: 22%;
+        margin: 10px;
+        height: 90%;
+      background-color: aqua;
+      border:  4px solid white;
+    border-radius: 7px;
+    display:flex;
+  }
+  .placeHolder{
+      width:15%;
+      border: 2px solid white;
+      margin: 10px;
+      color: white;
+
+  }
+  .threeDiv h3{
+      color:white;
+      font-size:25px;
+      margin-left: 2px;
+   }
+
+  .data{
+      width:50%;
+      border: 2px solid white;
+      border-radius: 8px;
+      margin: 10px;
+
+  }
+ .threeDiv{
+     display: inline-flex;
+     height: 100%;
+ }
+
+  .desP{
+    border:  4px solid white;
+    background-color: lightblue;
+    border-radius: 7px;
+    width: 100%;
+    height: 45%;
+    width:65%;
+    display:flex;
+    margin-left: 33%;
+    margin-right:2px;
+    margin-bottom:2px;
+    
+  }
+
+  .Bottom{
+      background-color:yellow;
+      width:100%;
+      height:25%;
+  }
